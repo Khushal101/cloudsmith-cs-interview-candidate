@@ -33,14 +33,11 @@ jobs:
 
       - name: Build package
         run: python -m build
-
-      - name: Ensure dist folder exists
-        run: mkdir -p dist  
-
-     - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: example-package
-          path: dist/
-          if-no-files-found: error
-          retention-days: 5
+  
+      - name: Upload artifact
+          uses: actions/upload-artifact@v4
+          with:
+            name: example-package
+            path: dist/
+            if-no-files-found: error
+            retention-days: 5   
