@@ -35,9 +35,9 @@ jobs:
         run: python -m build
   
       - name: Upload artifact
-          uses: actions/upload-artifact@v4
-          with:
-            name: example-package
-            path: dist/
-            if-no-files-found: error
-            retention-days: 5   
+        uses: actions/upload-artifact@v4
+        with:
+          name: example-package
+          path: dist/
+          if-no-files-found: error
+          retention-days: 5   
