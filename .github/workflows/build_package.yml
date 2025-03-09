@@ -47,4 +47,4 @@ jobs:
           if-no-files-found: error
           retention-days: 5
         env:
-          ACTIONS_RUNTIME_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACTIONS_RUNTIME_TOKEN: ${{ secrets.TOKEN }}
