@@ -40,4 +40,13 @@ jobs:
           name: example-package
           path: dist/
           if-no-files-found: error
-          retention-days: 5   
+          retention-days: 5  
+
+      - name: Install Cloudsmith CLI
+        run: pip install cloudsmith-cli
+
+      - name: Upload package to Cloudsmith
+        env:
+          CLOUDSMITH_API_KEY: ${{ secrets.CLOUDSMITH_API_KEY }}
+        run: |
+          cloudsmith push python interview-khushalsingh-solanki/cloudsmith-khushal dist/*.tar.gz --api-key $CLOUDSMITH_API_KEY     
